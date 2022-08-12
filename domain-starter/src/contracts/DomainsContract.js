@@ -1,5 +1,5 @@
 export const DomainsContract = {
-  address: "0xD345c311375209450Cf59c024D7E5d2254348122",
+  address: "0x8FE9ECc8f225549cBa44cc594bc57b5efe5CF538",
   abi: [
     {
       inputs: [
@@ -11,6 +11,27 @@ export const DomainsContract = {
       ],
       stateMutability: "payable",
       type: "constructor",
+    },
+    {
+      inputs: [],
+      name: "AlreadyRegistered",
+      type: "error",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+      ],
+      name: "InvalidName",
+      type: "error",
+    },
+    {
+      inputs: [],
+      name: "Unauthorized",
+      type: "error",
     },
     {
       anonymous: false,
@@ -176,6 +197,19 @@ export const DomainsContract = {
       type: "function",
     },
     {
+      inputs: [],
+      name: "getAllNames",
+      outputs: [
+        {
+          internalType: "string[]",
+          name: "",
+          type: "string[]",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
       inputs: [
         {
           internalType: "uint256",
@@ -239,12 +273,57 @@ export const DomainsContract = {
     },
     {
       inputs: [],
+      name: "isOwner",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
       name: "name",
       outputs: [
         {
           internalType: "string",
           name: "",
           type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "names",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "owner",
+      outputs: [
+        {
+          internalType: "address payable",
+          name: "",
+          type: "address",
         },
       ],
       stateMutability: "view",
@@ -477,6 +556,32 @@ export const DomainsContract = {
         },
       ],
       name: "transferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+      ],
+      name: "valid",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "pure",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "withdraw",
       outputs: [],
       stateMutability: "nonpayable",
       type: "function",
