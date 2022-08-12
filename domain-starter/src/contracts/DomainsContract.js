@@ -1,5 +1,5 @@
 export const DomainsContract = {
-  address: "0x8FE9ECc8f225549cBa44cc594bc57b5efe5CF538",
+  address: "0x5001B38a9FEB5c794271B0b6215D17E95Ba2B550",
   abi: [
     {
       inputs: [
