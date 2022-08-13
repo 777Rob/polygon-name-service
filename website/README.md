@@ -16,4 +16,4 @@ If you use VSCode to build your app, we included a list of suggested extensions 
 
 Have some questions make sure you head over to your [buildspace Dashboard](https://app.buildspace.so/) and link your Discord account so you can get access to helpful channels teaching assistants, and your instructor!
 
-![https://buildspace.so/p/build-polygon-ens](Project page)
+[Project Page](https://buildspace.so/p/build-polygon-ens)
