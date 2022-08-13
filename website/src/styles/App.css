@@ -152,6 +152,14 @@ header {
   height: 35px;
 }
 
+.github-logo {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
 .footer-text {
   color: white;
   font-size: 16px;

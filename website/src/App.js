@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DomainsContract } from "./contracts/DomainsContract";
 import "./styles/App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
+import githubLogo from "./assets/github-logo.svg";
 import { ethers } from "ethers";
 import polygonLogo from "./assets/polygonlogo.png";
 import ethLogo from "./assets/ethlogo.png";
@@ -11,6 +12,7 @@ import Mints from "./components/Mints";
 
 const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+const GITHUB_LINK = `https://github.com/777Rob/polygon-name-service`;
 const tld = ".matic";
 
 const App = (props) => {
@@ -197,11 +199,9 @@ const App = (props) => {
             </div>
           </header>
         </div>
-
         {!currentAccount && <ConnectWallet />}
         {currentAccount && inputForm()}
         {mints && <Mints editRecord={editRecord} />}
-
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
@@ -210,6 +210,15 @@ const App = (props) => {
             target="_blank"
             rel="noreferrer"
           >{`built with @${TWITTER_HANDLE}`}</a>
+          <img alt="GitHub Logo" className="github-logo" src={githubLogo} />{" "}
+          <a
+            className="footer-text"
+            href={GITHUB_LINK}
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub Repository
+          </a>
         </div>
       </div>
     </div>
