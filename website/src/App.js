@@ -67,6 +67,9 @@ const App = (props) => {
 
     return (
       <div className="form-container">
+        <div className="subtitle">
+          {editing ? "Change Domain Record" : "Register A New Domain"}
+        </div>
         <div className="first-row">
           <input
             type="text"

@@ -6,7 +6,7 @@ function Mints(props) {
   const tld = ".matic";
   const { mints, currentAccount, editRecord } = props;
 
-  if (currentAccount && mints.length > 0) {
+  if (mints.length > 0) {
     return (
       <div className="mint-container">
         <p className="subtitle"> Recently minted domains</p>
@@ -28,7 +28,8 @@ function Mints(props) {
                     </p>
                   </a>
                   {/* If mint.owner is currentAccount, add an "edit" button*/}
-                  {mint.owner.toLowerCase() === currentAccount.toLowerCase() ? (
+                  {currentAccount &&
+                  mint.owner.toLowerCase() === currentAccount.toLowerCase() ? (
                     <button
                       className="edit-button"
                       onClick={() => editRecord(mint.name)}
@@ -49,7 +50,7 @@ function Mints(props) {
       </div>
     );
   }
-  return <p className="subtitle"> Recently minted domains</p>;
+  return <p className="subtitle"></p>;
 }
 
 export default connect(Mints);
