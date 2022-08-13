@@ -12,6 +12,7 @@ describe("Domains", function () {
     );
     const domainContract = await domainContractFactory.deploy("matic");
     await domainContract.deployed();
+    const [owner, otherAccount] = await ethers.getSigners();
 
     console.log("Contract deployed to:", domainContract.address);
 
@@ -20,24 +21,19 @@ describe("Domains", function () {
       value: hre.ethers.utils.parseEther("0.01"),
     });
     await txn.wait();
-    console.log("Minted domain banana.matic");
 
     txn = await domainContract.setRecord(
       "banana",
       "Am I a banana or a ninja??"
     );
     await txn.wait();
-    console.log("Set record for banana.ninja");
 
     const address = await domainContract.getAddress("banana");
-    console.log("Owner of domain banana:", address);
-
     const balance = await hre.ethers.provider.getBalance(
       domainContract.address
     );
-    console.log("Contract balance:", hre.ethers.utils.formatEther(balance));
-
-    txn = await domainContract.getAllNames();
-    console.log(txn);
+    const registredNames = await domainContract.getAllNames();
+    console.log("Domain Registred");
+    expect(registredNames.length).greaterThanOrEqual(1);
   });
 });
